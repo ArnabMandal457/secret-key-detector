@@ -41,7 +41,7 @@ pipeline {
         stage('Archive to S3') {
             steps {
                 echo 'Archiving report to S3...'
-                sh '~/.local/bin/aws s3 cp reports/report.html s3://secret-key-detector-reports-092040680611-ap-south-1-an/report-$(date +%Y%m%d-%H%M%S).html'
+                sh '/home/ubuntu/.local/bin/aws s3 cp reports/report.html s3://secret-key-detector-reports-092040680611-ap-south-1-an/report-$(date +%Y%m%d-%H%M%S).html'
             }
         }
     }
