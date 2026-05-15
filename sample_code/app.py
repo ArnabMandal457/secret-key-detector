@@ -2,7 +2,8 @@ import os
 import requests
 
 # Intentional secrets for testing our scanner
-AWS_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE
+stripe_api_key = "sk_live_abc123def456ghi789"
+AWS_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
 AWS_SECRET_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 api_key = "sk-abc123def456ghi789jkl"
 password = "admin123"
