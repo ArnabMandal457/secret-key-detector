@@ -11,7 +11,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing Python...'
+                echo 'Checking Python...'
                 sh 'python3 --version'
             }
         }
@@ -32,4 +32,18 @@ pipeline {
 
         stage('Deploy Report') {
             steps {
-                echo 'Deploying report
+                echo 'Deploying report...'
+                sh 'cp reports/report.html /var/www/html/report.html'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed. Report deployed.'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs.'
+        }
+    }
+}
