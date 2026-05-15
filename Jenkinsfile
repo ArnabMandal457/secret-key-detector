@@ -19,6 +19,7 @@ pipeline {
         stage('Run Secret Scan') {
             steps {
                 echo 'Scanning for secrets...'
+                sh 'mkdir -p reports'
                 sh 'python3 scripts/scan.py . > reports/scan_results.json'
             }
         }
