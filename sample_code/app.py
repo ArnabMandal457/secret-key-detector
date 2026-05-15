@@ -6,7 +6,7 @@ stripe_api_key = "sk_live_abc123def456ghi789"
 AWS_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
 AWS_SECRET_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 api_key = "sk-abc123def456ghi789jkl"
-password = "admin123"
+password = "admin1233948686"
 db_url = "mysql://root:password123@localhost/mydb"
 github_token = "ghp_16C7e42F292c6912E7710c838347Ae298v54"
 
