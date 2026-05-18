@@ -1,0 +1,52 @@
+{
+    "patterns": [
+        {
+            "name": "AWS Access Key",
+            "regex": "AKIA[0-9A-Z]{16}"
+        },
+        {
+            "name": "AWS Secret Key",
+            "regex": "(?i)aws.{0,20}secret.{0,20}['\"][0-9a-zA-Z/+]{40}['\"]"
+        },
+        {
+            "name": "API Key",
+            "regex": "(?i)api[_-]?key.{0,10}['\"][a-zA-Z0-9]{20,}['\"]"
+        },
+        {
+            "name": "Password",
+            "regex": "(?i)password\\s*=\\s*['\"][^'\"]{4,}['\"]"
+        },
+        {
+            "name": "Database URL",
+            "regex": "(?i)(mysql|postgresql|mongodb):\\/\\/[^\\s]+"
+        },
+        {
+            "name": "GitHub Token",
+            "regex": "ghp_[0-9a-zA-Z]{36}"
+        },
+        {
+            "name": "Stripe API Key",
+            "regex": "sk_live_[0-9a-zA-Z]{24,}"
+        },
+        {
+            "name": "JWT Token",
+            "regex": "eyJ[a-zA-Z0-9_-]{10,}\\.[a-zA-Z0-9_-]{10,}\\.[a-zA-Z0-9_-]{10,}"
+        },
+        {
+            "name": "Private Key",
+            "regex": "-----BEGIN (RSA |EC )?PRIVATE KEY-----"
+        },
+        {
+            "name": "Slack Token",
+            "regex": "xox[baprs]-[0-9a-zA-Z]{10,}"
+        },
+        {
+            "name": "Google API Key",
+            "regex": "AIza[0-9A-Za-z\\-_]{35}"
+        },
+        {
+            "name": "Twilio API Key",
+            "regex": "SK[0-9a-fA-F]{32}"
+        }
+    ]
+}

@@ -3,18 +3,13 @@ import json
 import sys
 import os
 from datetime import datetime
+import json
 
-# Patterns to detect secrets
-PATTERNS = {
-    "AWS Access Key": r"AKIA[0-9A-Z]{16}",
-    "AWS Secret Key": r"(?i)aws.{0,20}secret.{0,20}['\"][0-9a-zA-Z/+]{40}['\"]",
-    "API Key": r"(?i)api[_-]?key.{0,10}['\"][a-zA-Z0-9]{20,}['\"]",
-    "Password": r"(?i)password\s*=\s*['\"][^'\"]{4,}['\"]",
-    "Database URL": r"(?i)(mysql|postgresql|mongodb):\/\/[^\s]+",
-    "GitHub Token": r"ghp_[0-9a-zA-Z]{36}",
-    "JWT Token": r"eyJ[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}",
-    "Private Key": r"-----BEGIN (RSA |EC )?PRIVATE KEY-----",
-}
+# Load patterns dynamically from config
+with open(os.path.join(os.path.dirname(__file__), 'patterns.json'), 'r') as f:
+    config = json.load(f)
+
+PATTERNS = {p['name']: p['regex'] for p in config['patterns']}
 
 def scan_file(filepath):
     findings = []
